@@ -1,0 +1,402 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import "variables";
+@import "mixins";
+
+* {
+    color: $text-color;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+
+.text-white {
+    color: $text-color;
+}
+
+.text-gray {
+    color: $color-gray;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    @include dflex(center, center);
+    padding: 10px 80px;
+
+    .form-con {
+        background-color: $form-bg-color;
+        flex-direction: column;
+        border-radius: 25px;
+
+        .form-con-header {
+            flex-direction: column;
+            width: 100%;
+            height: 10%;
+            @include dflex(space-evenly, start);
+
+            p {
+                margin-top: 10px;
+                color: $color-gray;
+            }
+        }
+
+        .content {
+            width: 100%;
+            height: 85%;
+            @include dflex(space-between, center);
+
+            .v-text {
+                padding: 8px;
+                color: red;
+                margin-top: 10px;
+            }
+
+            .main-content {
+                margin-top: 40px;
+                flex-direction: column;
+                @include dflex(space-evenly, start);
+
+
+                .main-content-lastForm {
+                    width: 100%;
+                    flex-direction: column;
+                    @include dflex(space-evenly, start);
+                    height: 100%;
+                    .main-content-lastForm-row {
+                        height: 30px;
+                        width: 100%;
+                        margin-top: 30px;
+                        @include dflex(start, center);
+
+                        p {
+                            margin-left: 10px;
+                        }
+                    }
+                }
+
+
+                .main-content-header {
+                    flex-direction: column;
+                    @include dflex(space-between, start);
+                    height: 30%;
+                    border-bottom: 2px solid $border-color;
+                    padding: 0 0 20px 0;
+                }
+
+                .main-content-form {
+                    width: 100%;
+                    flex-direction: column;
+                    @include dflex(space-evenly, center);
+
+                    .main-content-form-section {
+                        border: none;
+                        background-color: transparent;
+                        margin-top: 25px;
+                        width: 100%;
+                        flex-direction: column;
+                        @include dflex(start, start);
+
+
+                        input {
+                            margin-top: 10px;
+                            border-radius: 10px;
+                            background-color: transparent;
+                            border: 2px solid $border-color;
+                            outline: none;
+                            padding: 10px;
+                            transition: all .2s;
+                            cursor: pointer;
+
+                            &:focus,
+                            &:hover {
+                                border: 2px solid $secondary-color;
+                            }
+                        }
+
+                        input[type="range"] {
+                            accent-color: $secondary-color;
+                        }
+
+                        .chart-line {
+                            padding: 0 12px;
+                            color: $color-gray;
+                            height: 30px;
+                            @include dflex(space-between, center);
+
+                            p {
+                                color: $border-color;
+                            }
+                        }
+
+                        .chart-number {
+                            height: 30px;
+
+                            @include dflex(space-between, center);
+
+                        }
+
+                        .main-content-form-section-content {
+                            position: relative;
+
+                            button {
+                                background-color: transparent;
+                                cursor: pointer;
+                                border: 2px solid $border-color;
+                                border-radius: 15px;
+                                transition: all .2s;
+                                outline: none;
+                                position: absolute;
+                                width: 100%;
+                                height: 100%;
+
+                                &:focus,
+                                &:hover {
+                                    border: 2px solid $secondary-color;
+                                }
+                            }
+
+                            .main-content-form-section-content-text-centent-con {
+                                padding: 10px;
+                                width: 100%;
+                                height: 100%;
+                                @include dflex(start, center);
+
+                            }
+
+                            .main-content-form-section-content-text-centent-con img {
+                                margin-left: 10px;
+                            }
+
+                            .main-content-form-section-content-text-centent-con .main-content-form-section-content-text-centent {
+                                flex-direction: column;
+                                @include dflex(space-evenly, start);
+                                margin-left: 14px;
+                                width: 100%;
+                                height: 100%;
+
+                            }
+                        }
+                    }
+
+                }
+
+                .main-content-form-btn-con {
+                    margin-top: 25px;
+                    height: 15%;
+                    display: flex;
+                    align-items: center;
+
+                    button {
+                        margin-right: 5px;
+                        background-color: $secondary-color;
+                        border-radius: 25px;
+                        cursor: pointer;
+                        transition: all .2s;
+                        font-size: 15px;
+                        border: none;
+                        outline: none;
+
+                        &:hover {
+                            background-color: $secondary-color-hover;
+                        }
+                    }
+
+                    #backBtn {
+                        background-color: transparent;
+                    }
+                }
+            }
+
+            .items-con {
+                margin-top: 40px;
+                position: relative;
+
+                span {
+                    background-color: $border-color;
+                    position: absolute;
+                }
+
+                ul {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    list-style: none;
+                    @include dflex(space-evenly, center);
+                    gap: 10px;
+
+                    #li-f .circle {
+                        background-color: $secondary-color;
+                    }
+
+                    li {
+                        @include dflex(space-between, center);
+                        gap: 10px;
+
+                        .circle {
+                            border-radius: 50%;
+                            background-color: $border-color;
+                            padding: 10px;
+                            @include dflex(center, center)
+                        }
+
+                        .li-text {
+                            height: 90%;
+                            flex-direction: column;
+                            justify-content: space-evenly;
+                            align-items: end;
+
+                            p {
+                                color: $color-gray;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// form con 
+@include responsive(height, form-con, 600px, min-width, 320px);
+@include responsive(width, form-con, 300px, min-width, 320px);
+@include responsive(width, form-con, 500px, min-width, 481px);
+@include responsive(height, form-con, 550px, min-width, 961px);
+@include responsive(height, form-con, 750px, min-width, 1025px);
+@include responsive(width, form-con, 700px, min-width, 641px);
+@include responsive(width, form-con, 900px, min-width, 961px);
+@include responsive(height, form-con, 650px, min-width, 1025px);
+@include responsive(width, form-con, 1100px, min-width, 1025px);
+@include responsive(height, form-con, 750px, min-width, 1281px);
+@include responsive(width, form-con, 1250px, min-width, 1281px);
+
+
+@include responsive(padding, form-con, 20px, min-width, 320px);
+@include responsive(padding, form-con, 30px, min-width, 481px);
+@include responsive(padding, form-con, 30px, min-width, 641px);
+@include responsive(padding, form-con, 40px, min-width, 961px);
+@include responsive(padding, form-con, 40px 60px, min-width, 1025px);
+@include responsive(padding, form-con, 40px 60px, min-width, 1281px);
+
+//fony size
+@include responsive(font-size, f-size, 8px, min-width, 320px);
+@include responsive(font-size, f-size, 10px, min-width, 481px);
+@include responsive(font-size, f-size, 11px, min-width, 641px);
+@include responsive(font-size, f-size, 13px, min-width, 961px);
+@include responsive(font-size, f-size, 14px, min-width, 1025px);
+
+
+//main
+@include responsive(flex-direction, content, column, min-width, 320px);
+@include responsive(flex-direction, content, row, min-width, 961px);
+
+
+@include responsive(width, main-content, 100%, min-width, 320px);
+@include responsive(height, main-content, 80%, min-width, 320px);
+
+@include responsive(width, main-content, 75%, min-width, 961px);
+@include responsive(height, main-content, 80%, min-width, 961px);
+
+@include responsive(width, main-content-header, 100%, min-width, 320px);
+@include responsive(width, main-content-header, 80%, min-width, 961px);
+
+@include responsive(width, main-content-form-btn-con, 100%, min-width, 320px);
+@include responsive(justify-content, main-content-form-btn-con, center, min-width, 320px);
+@include responsive(width, main-content-form-btn-con, 80%, min-width, 961px);
+@include responsive(justify-content, main-content-form-btn-con, end, min-width, 961px);
+@include responsive(padding, main-content-form-btn-con button, 10px 40px, min-width, 320px);
+@include responsive(padding, main-content-lastForm button, 10px 50px, min-width, 320px);
+@include responsive(padding, main-content-form-btn-con button, 15px 50px, min-width, 641px);
+@include responsive(padding, main-content-lastForm button, 15px 50px, min-width, 641px);
+
+
+@include responsive(height, main-content-form-section input, 50px, min-width, 320px);
+@include responsive(width, main-content-form-section input, 100%, min-width, 320px);
+@include responsive(width, chart-line, 100%, min-width, 320px);
+@include responsive(width, chart-line, 80%, min-width, 961px);
+
+@include responsive(width, chart-number, 100%, min-width, 320px);
+@include responsive(width, chart-number, 80%, min-width, 961px);
+
+@include responsive(width, main-content-form-section-content, 100%, min-width, 320px);
+@include responsive(height, main-content-form-section-content, 60px, min-width, 320px);
+@include responsive(height, main-content-form-section-content, 70px, min-width, 641px);
+@include responsive(height, main-content-form-section-content, 90px, min-width, 961px);
+@include responsive(width, main-content-form-section-content, 80%, min-width, 961px);
+
+
+@include responsive(font-size, main-content-form-section-content-text-centent p, 10px, min-width, 320px);
+@include responsive(font-size, main-content-form-section-content-text-centent p, 12px, min-width, 641px);
+@include responsive(font-size, main-content-form-section-content-text-centent p, 14px, min-width, 961px);
+
+
+@include responsive(height, main-content-form-section-content img, 60%, min-width, 320px);
+@include responsive(height, main-content-form-section-content img, 50%, min-width, 941px);
+
+
+@include responsive(width, main-content-form-section input, 80%, min-width, 961px);
+@include responsive(height, main-content-form-section input, 60px, min-width, 961px);
+
+//ul
+@include responsive(width, items-con, 100%, min-width, 320px);
+@include responsive(height, items-con, 40px, min-width, 320px);
+@include responsive(flex-direction, items-con ul, row, min-width, 320px);
+
+@include responsive(width, items-con, 20%, min-width, 961px);
+@include responsive(height, items-con, 100%, min-width, 961px);
+@include responsive(flex-direction, items-con ul, column, min-width, 961px);
+
+@include responsive(width, items-con span, 100%, min-width, 320px);
+@include responsive(height, items-con span, 2px, min-width, 320px);
+@include responsive(bottom, items-con span, 45%, min-width, 320px);
+
+@include responsive(width, items-con span, 2px, min-width, 961px);
+@include responsive(height, items-con span, 100%, min-width, 961px);
+@include responsive(right, items-con span, 18px, min-width, 961px);
+@include responsive(right, items-con span, 14%, min-width, 1025px);
+@include responsive(right, items-con span, 23px, min-width, 1281px);
+@include responsive(bottom, items-con span, 0, min-width, 961px);
+
+//li
+@include responsive(width, items-con ul li, 20%, min-width, 320px);
+@include responsive(height, items-con ul li, 50px, min-width, 320px);
+
+@include responsive(width, items-con ul li, 20%, min-width, 481px);
+@include responsive(height, items-con ul li, 50px, min-width, 481px);
+
+@include responsive(width, items-con ul li, 15%, min-width, 641px);
+@include responsive(height, items-con ul li, 50px, min-width, 641px);
+
+@include responsive(width, items-con ul li, 100%, min-width, 961px);
+@include responsive(height, items-con ul li, 12%, min-width, 961px);
+
+//circle
+@include responsive(height, circle, 40px, min-width, 320px);
+@include responsive(width, circle, 40px, min-width, 320px);
+
+@include responsive(height, circle, 45px, min-width, 481px);
+@include responsive(width, circle, 45px, min-width, 481px);
+
+@include responsive(height, circle, 50px, min-width, 1025px);
+@include responsive(width, circle, 50px, min-width, 1025px);
+
+
+@include responsive(display, li-text, none, min-width, 320px);
+@include responsive(display, li-text, flex, min-width, 961px);
+
+@include responsive(width, li-text, 120px, min-width, 961px);
+@include responsive(width, li-text, 120px, min-width, 1025px);
+@include responsive(width, li-text, 150px, min-width, 1281px);
+
+@include responsive(font-size, li-text p, 9px, min-width, 961px);
+@include responsive(font-size, li-text p, 9px, min-width, 1025px);
+@include responsive(font-size, li-text p, 12px, min-width, 1281px);

@@ -1,0 +1,19 @@
+@import "variables";
+
+@mixin dflex($justify-content , $align-items) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin responsive($property , $class-name, $value , $max-min ,$max-min-value) {
+    @media only screen and ($max-min: $max-min-value) {
+        .#{$class-name}{
+            #{$property}: $value;
+        }
+    }
+}
+
+@mixin border($direction){
+    border-#{$direction} : 2px solid $border-color;
+}
